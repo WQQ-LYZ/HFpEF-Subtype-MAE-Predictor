@@ -148,7 +148,7 @@ elif page == "HFpEF PhenoRiskAssist":
 
     # 使用pickle的load方法从磁盘文件反序列化加载一个之前保存的随机森林模型对象
 
-    with open('HFpEF phenogroup Identifier2.pkl', 'rb') as f:
+    with open('HFpEF-phenogroup-Identifier2.pkl', 'rb') as f:
         rfc_model = pickle.load(f)
     # 使用pickle的load方法从磁盘文件反序列化加载一个之前保存的映射对象
     # with open('output_uniques.pkl', 'rb') as f:
