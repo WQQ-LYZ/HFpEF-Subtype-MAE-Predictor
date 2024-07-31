@@ -21,11 +21,30 @@ with st.sidebar:
 if page == "Introduction":
     st.title("Welcome to HFpEF PhenoRiskAssist！")
 
-    st.markdown("""**HFpEF PhenoRiskAssist** is an innovative clinical decision support tool designed to identify phenotypes and 
-    predict prognosis for HFpEF patients through unsupervised machine learning algorithms. This platform is built on real-world data, providing clinicians with precise patient care and management.""")
+    import streamlit as st
+
+    st.markdown("""<p style="font-size:18px; line-height:2em;">
+        <strong>HFpEF PhenoRiskAssist</strong> is an innovative clinical decision support tool designed to identify phenotypes and 
+        predict prognosis for HFpEF patients through unsupervised machine learning algorithms. This platform is built on real-world data, providing clinicians with precise patient care and management.
+    </p>""", unsafe_allow_html=True)
     st.header('Five Phenogroups')
     st.image('Phenogroup.jpg')
+    import streamlit as st
 
+    import streamlit as st
+
+    st.markdown("""<p style="font-size:18px; line-height:2em;">
+        <strong>Disclaimer</strong>
+        THE AUTHORS, OWNERS, AND PROVIDERS OF THE HFpEF PHENORISKASSIST TOOL DISCLAIM ANY LIABILITY TO ANY PATIENT OR ANY OTHER PERSON. BY USING THIS TOOL, YOU AGREE THAT YOU HAVE READ, UNDERSTOOD, AND ACCEPT THE TERMS OF THIS DISCLAIMER.
+        <br>
+        THE INFORMATION AND PREDICTIONS PROVIDED BY HFpEF PHENORISKASSIST ARE FOR EDUCATIONAL AND INFORMATIONAL PURPOSES ONLY AND ARE NOT INTENDED TO REPLACE PROFESSIONAL MEDICAL ADVICE. THE TOOL IS OFFERED "AS IS" WITHOUT ANY WARRANTY, EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+        <br>
+        ALL LIABILITY FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM THE USE OF THIS TOOL IS HEREBY DISCLAIMED AND EXCLUDED. THE AUTHORS, OWNERS, AND PROVIDERS ASSUME NO RESPONSIBILITY FOR ANY CONSEQUENCE RESULTING FROM THE USE OF THIS TOOL.
+    </p>""", unsafe_allow_html=True)
+    st.markdown("""<p style='font-size:18px; line-height:2em;'>
+        HFpEF PhenoRiskAssist is designed to supplement, not replace, the professional judgment of healthcare providers. The tool considers a variety of factors but may not account for all potentially difficult-to-measure variables that could impact an individual patient's risk of an adverse outcome. Patients deemed to be at low risk may still experience major adverse events, and there is no subgroup with a zero risk of complications.
+        This tool is made available free of charge for use by physicians in providing individual patient care. Any commercial use of the tool without permission is strictly prohibited. For licensing inquiries, please contact Chongqing Medical University at <a href='mailto:fernsmith521@gmail.com'>fernsmith521@gmail.com</a>.
+    </p>""", unsafe_allow_html=True)
 elif page == "HFpEF PhenoRiskAssist":
    # 该页面是3:1:2的列布局
     col_form, col = st.columns([4, 1])
