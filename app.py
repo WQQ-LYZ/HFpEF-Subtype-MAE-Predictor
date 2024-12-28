@@ -8,7 +8,7 @@ from pycaret.classification import *
 
 # 设置页面的标题、图标和布局
 st.set_page_config(
-    page_title="HFpEF PhenoRiskAssist——Precision Medicine Starts Here",  # 页面标题
+    page_title="HFpEF Subtype & MAE Predictor——Precision Medicine Starts Here",  # 页面标题
     page_icon="heart_icon.png",  # 页面图标
     layout='wide',
 )
@@ -27,18 +27,18 @@ st.markdown("""
 with st.sidebar:
     st.image('right_logo.png', width=100)
     st.title('Please select the page')
-    page = st.selectbox("Please select the page", ["Introduction", "HFpEF PhenoRiskAssist"], label_visibility='collapsed')
+    page = st.selectbox("Please select the page", ["Introduction", "HFpEF Subtype & MAE Predictor"], label_visibility='collapsed')
 
 if page == "Introduction":
-    st.title("Welcome to HFpEF PhenoRiskAssist！")
+    st.title("Welcome to HFpEF Subtype & MAE Predictor！")
 
     import streamlit as st
 
     st.markdown("""<p style="font-size:18px; line-height:2em;">
-        <strong>HFpEF PhenoRiskAssist</strong> is an innovative clinical decision support tool designed to identify phenotypes and 
+        <strong>HFpEF Subtype & MAE Predictor</strong> is an innovative clinical decision support tool designed to identify subtypes and 
         predict prognosis for HFpEF patients through unsupervised machine learning algorithms. This platform is built on real-world data, providing clinicians with precise patient care and management.
     </p>""", unsafe_allow_html=True)
-    st.header('Five Phenogroups')
+    st.header('Five subtypes')
     st.image('Phenogroup.jpg')
     import streamlit as st
 
@@ -46,24 +46,24 @@ if page == "Introduction":
 
     st.markdown("""<p style="font-size:18px; line-height:2em;">
         <strong>Disclaimer</strong>
-        THE AUTHORS, OWNERS, AND PROVIDERS OF THE HFpEF PHENORISKASSIST TOOL DISCLAIM ANY LIABILITY TO ANY PATIENT OR ANY OTHER PERSON. BY USING THIS TOOL, YOU AGREE THAT YOU HAVE READ, UNDERSTOOD, AND ACCEPT THE TERMS OF THIS DISCLAIMER.
+        THE AUTHORS, OWNERS, AND PROVIDERS OF THE HFpEF Subtype & MAE Predictor TOOL DISCLAIM ANY LIABILITY TO ANY PATIENT OR ANY OTHER PERSON.
         <br>
-        THE INFORMATION AND PREDICTIONS PROVIDED BY HFpEF PHENORISKASSIST ARE FOR EDUCATIONAL AND INFORMATIONAL PURPOSES ONLY AND ARE NOT INTENDED TO REPLACE PROFESSIONAL MEDICAL ADVICE. THE TOOL IS OFFERED "AS IS" WITHOUT ANY WARRANTY, EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+        THE INFORMATION AND PREDICTIONS PROVIDED BY HFpEF Subtype & MAE Predictor ARE FOR EDUCATIONAL AND INFORMATIONAL PURPOSES ONLY AND ARE NOT INTENDED TO REPLACE PROFESSIONAL MEDICAL ADVICE. THE TOOL IS OFFERED "AS IS" WITHOUT ANY WARRANTY, EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
         <br>
         ALL LIABILITY FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM THE USE OF THIS TOOL IS HEREBY DISCLAIMED AND EXCLUDED. THE AUTHORS, OWNERS, AND PROVIDERS ASSUME NO RESPONSIBILITY FOR ANY CONSEQUENCE RESULTING FROM THE USE OF THIS TOOL.
     </p>""", unsafe_allow_html=True)
     st.markdown("""<p style='font-size:18px; line-height:2em;'>
-        HFpEF PhenoRiskAssist is designed to supplement, not replace, the professional judgment of healthcare providers. The tool considers a variety of factors but may not account for all potentially difficult-to-measure variables that could impact an individual patient's risk of an adverse outcome. Patients deemed to be at low risk may still experience major adverse events, and there is no subgroup with a zero risk of complications.
+        HFpEF Subtype & MAE Predictor is designed to supplement, not replace, the professional judgment of healthcare providers. The tool considers a variety of factors but may not account for all potentially difficult-to-measure variables that could impact an individual patient's risk of an adverse outcome. Patients deemed to be at low risk may still experience major adverse events, and there is no subgroup with a zero risk of complications.
         This tool is made available free of charge for use by physicians in providing individual patient care. Any commercial use of the tool without permission is strictly prohibited. For licensing inquiries, please contact Chongqing Medical University at <a href='mailto:fernsmith521@gmail.com'>fernsmith521@gmail.com</a>.
     </p>""", unsafe_allow_html=True)
-elif page == "HFpEF PhenoRiskAssist":
+elif page == "HFpEF Subtype & MAE Predictor":
    # 该页面是3:1:2的列布局
     col_form, col,col_form1 = st.columns([3, 1,2])
     predict_result_code_FULL=0
     with (col_form):
 
         st.markdown(
-            "This web app uses data from Chongqing Medical University to predict HFpEF phenotypes."
+            "This web app uses data from Chongqing Medical University to predict HFpEF subtypes."
             " Input 23 details to begin.")
 
         # 运用表单和表单提交按钮
@@ -192,19 +192,19 @@ elif page == "HFpEF PhenoRiskAssist":
                 # 根据预测结果输出对应的企鹅物种名称
                 if predict_result_code == 1:
                     predict_result_code_FULL = 1
-                    st.write(f'Predict the phenotype of this HFpEF patient：**Male**\n**Low Risk**\n**Phenogroup**')
+                    st.write(f'Predict the phenotype of this HFpEF patient：**Male**\n**Low Risk**\n**subtype**')
                 elif predict_result_code == 2:
                     predict_result_code_FULL = 2
-                    st.write(f'Predict the phenotype of this HFpEF patient：**Male**\n**Atherosclerosis**\n**Phenogroup**')
+                    st.write(f'Predict the phenotype of this HFpEF patient：**Male**\n**Atherosclerosis**\n**subtype**')
                 elif predict_result_code == 3:
                     predict_result_code_FULL = 3
-                    st.write(f'Predict the phenotype of this HFpEF patient：**Female**\n**Diabetes**\n**Phenogroup**')
+                    st.write(f'Predict the phenotype of this HFpEF patient：**Female**\n**Diabetes**\n**subtype**')
                 elif predict_result_code == 4:
                     predict_result_code_FULL = 4
-                    st.write(f'Predict the phenotype of this HFpEF patient：**Female**\n**Atrial Fibrillation**\n**Phenogroup**')
+                    st.write(f'Predict the phenotype of this HFpEF patient：**Female**\n**Atrial Fibrillation**\n**subtype**')
                 elif predict_result_code == 5:
                     predict_result_code_FULL = 5
-                    st.write(f'Predict the phenotype of this HFpEF patient：**Female**\n**Low Risk**\n**Phenogroup**')
+                    st.write(f'Predict the phenotype of this HFpEF patient：**Female**\n**Low Risk**\n**subtype**')
                 else:
                     st.write(f'Prediction outcome unknown based on input data.')
 
